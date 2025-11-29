@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# vhibes Frontend 🚀
 
-## Getting Started
+Frontend for the vhibes Farcaster mini-app, built with Next.js and deployed on Vercel.
 
-First, run the development server:
+## 📋 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This repository contains the frontend application for the vhibes platform:
+
+- **🔥 AI Roast Me**: Submit selfies for hilarious AI-generated roasts
+- **🧊 Icebreaker Mode**: Answer quirky prompts and create polls
+- **⚡ Chain Reaction**: Start viral challenges and join the fun
+- **🏆 Points & Badges**: Earn points and collect achievement badges
+- **📱 Farcaster Integration**: Seamless wallet connection and sharing
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- MetaMask or any Web3 wallet
+- Base Sepolia testnet ETH
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/vhibez/vhibes-frontend.git
+   cd vhibes-frontend
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Edit `.env.local` and add your configuration:
+   ```env
+   NEXT_PUBLIC_VHIBES_ADMIN_ADDRESS=your_admin_contract_address
+   NEXT_PUBLIC_VHIBES_POINTS_ADDRESS=your_points_contract_address
+   NEXT_PUBLIC_VHIBES_BADGES_ADDRESS=your_badges_contract_address
+   NEXT_PUBLIC_ROAST_ME_ADDRESS=your_roast_me_contract_address
+   NEXT_PUBLIC_ICEBREAKER_ADDRESS=your_icebreaker_contract_address
+   NEXT_PUBLIC_CHAIN_REACTION_ADDRESS=your_chain_reaction_contract_address
+   NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_walletconnect_project_id
+   NEXT_PUBLIC_CDP_CLIENT_API_KEY=your_coinbase_api_key
+   NEXT_PUBLIC_HUGGING_FACE_API_KEY=your_huggingface_api_key
+   NEXT_PUBLIC_PINATA_JWT=your_pinata_jwt
+   ```
+
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🏗️ Project Structure
+
+```
+vhibes-frontend/
+├── src/
+│   ├── app/              # Next.js App Router pages
+│   ├── components/       # React components
+│   ├── contexts/         # React contexts
+│   ├── lib/              # Utility functions and configs
+│   ├── providers/        # React providers
+│   └── types/            # TypeScript type definitions
+├── public/               # Static assets
+├── next.config.ts        # Next.js configuration
+├── tailwind.config.ts    # Tailwind CSS configuration
+└── package.json          # Dependencies
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 15 with App Router
+- **Styling**: Tailwind CSS 4
+- **Web3**: Wagmi + Viem
+- **Wallet Integration**: Farcaster Mini App Connector + Base MiniKit
+- **State Management**: React hooks + TanStack Query
+- **AI Integration**: Hugging Face Inference API
+- **Storage**: IPFS via Pinata
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Configuration
 
-## Learn More
+### Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `NEXT_PUBLIC_VHIBES_ADMIN_ADDRESS` | Admin contract address | ✅ |
+| `NEXT_PUBLIC_VHIBES_POINTS_ADDRESS` | Points contract address | ✅ |
+| `NEXT_PUBLIC_VHIBES_BADGES_ADDRESS` | Badges contract address | ✅ |
+| `NEXT_PUBLIC_ROAST_ME_ADDRESS` | RoastMe contract address | ✅ |
+| `NEXT_PUBLIC_ICEBREAKER_ADDRESS` | Icebreaker contract address | ✅ |
+| `NEXT_PUBLIC_CHAIN_REACTION_ADDRESS` | ChainReaction contract address | ✅ |
+| `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` | WalletConnect project ID | ✅ |
+| `NEXT_PUBLIC_CDP_CLIENT_API_KEY` | Coinbase API key | ✅ |
+| `NEXT_PUBLIC_HUGGING_FACE_API_KEY` | Hugging Face API key | ✅ |
+| `NEXT_PUBLIC_PINATA_JWT` | Pinata JWT for IPFS | ✅ |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧪 Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run the development server:
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+Build for production:
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Start production server:
+```bash
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run linting:
+```bash
+npm run lint
+```
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. **Connect your repository** to Vercel
+2. **Set environment variables** in Vercel dashboard
+3. **Deploy** with automatic builds on push
+
+### Manual Deployment
+
+```bash
+npm run build
+npm start
+```
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🔗 Links
+
+- **Live App**: [https://vhibes.vercel.app](https://vhibes.vercel.app)
+- **Farcaster Mini App**: [https://farcaster.xyz/miniapps/vhibes](https://farcaster.xyz/miniapps/vhibes)
+- **Smart Contracts**: [https://github.com/vhibez/vhibes-smartcontract](https://github.com/vhibez/vhibes-smartcontract)
+- **GitHub**: [https://github.com/vhibez/vhibes-frontend](https://github.com/vhibez/vhibes-frontend)
+
+---
+
+**Made with ❤️ by the vhibes team**
